@@ -1,0 +1,17 @@
+services:
+  postgres:
+    container_name: spring_sec_asymmtric
+    image: 17.2
+    environment:
+      POSTGRES_USER: Username
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+      POSTGRES_DB: spring_app_db
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  postgres:
