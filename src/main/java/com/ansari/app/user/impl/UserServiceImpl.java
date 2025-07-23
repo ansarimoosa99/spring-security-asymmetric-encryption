@@ -60,17 +60,44 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deactivateAccount(String userId) {
+        final User user = this.userRepository.findById(userId)
+                            .orElseThrow(() -> new BusinessException(ErrorCode.USER_NOT_FOUND, userId));
+
+        if(!user.isEnabled()){
+            throw new BusinessException(ErrorCode.ACCCOUNT_ALREADY_DEACTIVATED);
+        }
+        user.setEnabled(false);
+        this.userRepository.save(user);
 
     }
 
     @Override
     public void reactivateAccount(String userId) {
+        final User user = this.userRepository.findById(userId)
+                .orElseThrow(() -> new BusinessException(ErrorCode.USER_NOT_FOUND, userId));
 
+        if(user.isEnabled()){
+            throw new BusinessException(ErrorCode.ACCCOUNT_ALREADY_ACTIVATED);
+        }
+        user.setEnabled(true);
+        this.userRepository.save(user);
     }
 
     @Override
     public void deleteAccount(String userId) {
+//        final User user = this.userRepository.findById(userId)
+//                                .orElseThrow(() -> new BusinessException(ErrorCode.USER_NOT_FOUND, userId));
+//
+//        if(user.isLocked()){
+//            throw new BusinessException(ErrorCode.ACCCOUNT_ALREADY_DELETED);
+//        }
+//        user.setLocked(true);
+//        this.userRepository.save(user);
 
+
+        // this method need rest of the entities
+        // the logic is just to schedule a profile for deletion
+        // and then a scheduled job will pick the profile and delete everything [hard delete]
     }
 
 
