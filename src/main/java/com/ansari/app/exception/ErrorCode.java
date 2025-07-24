@@ -23,7 +23,7 @@ public enum ErrorCode {
     ERR_USER_DISABLED("ERR_USER_DISABLED", "User is disabled", UNAUTHORIZED),
     BAD_CREDENTIALS("BAD_CREDENTIALS", "Username and / or password is incorrect", UNAUTHORIZED),
     USERNAME_NOT_FOUND("USERNAME_NOT_FOUND", "Username not found", NOT_FOUND),
-    INTERNAL_EXCEPTION("INTERNAL_EXCEPTION", "Internal server error", INTERNAL_SERVER_ERROR),
+    INTERNAL_EXCEPTION("INTERNAL_EXCEPTION", "Internal server error", INTERNAL_SERVER_ERROR);
 
 
     private final String code;
