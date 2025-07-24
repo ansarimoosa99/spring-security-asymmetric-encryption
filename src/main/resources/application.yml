@@ -21,6 +21,5 @@ app:
   security:
     jwt:
       access-token-expiration: 86400000    #24 hours for local testing, I recommend 15 mins for prod
-      refresh-token-expiration: 604800000  # 24 * 7
-
-# 24 hours - 60 * 60 * 24 - 86400000
+      refresh-token-expiration: 604800000  # 24 * 7   # 24 hours - 60 * 60 * 24 - 86400000
+    disposable-email: 10minutemail,20minutemail,33mail,5ymail,anonbox,guerrillamail,mailinator,maildrop,mailnesia,moakt,my10minutemail,throwawaymail,trashmail,temp-mail,tempmail,truemail,yopmail

@@ -1,5 +1,7 @@
 package com.ansari.app.auth.request;
 
+import com.ansari.app.validation.NonDisposableEmail;
+import com.ansari.app.validation.NotDisposableEmail;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -41,8 +43,7 @@ public class RegistrationRequest {
     private String lastName;
     @NotBlank(message = "VALIDATION.REGISTRATION.EMAIL.NOT_BLANK")
     @Email(message = "VALIDATION.REGISTRATION.EMAIL.FORMAT")
-    // @NotDisposableEmail(message = "VALIDATION.REGISTRATION.EMAIL.DISPOSABLE")
-    // to handle spam mail like abc@yapmail.com
+    @NonDisposableEmail(message = "VALIDATION.REGISTRATION.EMAIL.DISPOSABLE")
     @Schema(example = "abc@mail.com")
     private String email;
 
