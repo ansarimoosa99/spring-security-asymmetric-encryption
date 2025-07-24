@@ -18,4 +18,8 @@ public class BusinessException extends RuntimeException {
         }
         return errorCode.getDefaultMessage();
     }
+
+    public ErrorCode getErrorCode() {
+        return errorCode;
+    }
 }
