@@ -19,7 +19,7 @@ public enum ErrorCode {
     ACCCOUNT_ALREADY_DELETED("ACCCOUNT_ALREADY_DELETED", "Account is already deleted", BAD_REQUEST),
     EMAIL_ALREADY_EXISTS("EMAIL_ALREADY_EXISTS", "Email already exists", BAD_REQUEST),
     PHONE_ALREADY_EXISTS("PHONE_ALREADY_EXISTS", "Phone Number already exists", BAD_REQUEST),
-    PASSWORD_MISMATCH("PASSWORD_MISMATCH", "Passwords do not mismatch", BAD_REQUEST),
+    PASSWORD_MISMATCH("PASSWORD_MISMATCH", "Passwords do not match", BAD_REQUEST),
     ERR_USER_DISABLED("ERR_USER_DISABLED", "User is disabled", UNAUTHORIZED),
     BAD_CREDENTIALS("BAD_CREDENTIALS", "Username and / or password is incorrect", UNAUTHORIZED),
     USERNAME_NOT_FOUND("USERNAME_NOT_FOUND", "Username not found", NOT_FOUND),

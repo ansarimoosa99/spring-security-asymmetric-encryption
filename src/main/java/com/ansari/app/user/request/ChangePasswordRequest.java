@@ -23,7 +23,7 @@ public class ChangePasswordRequest {
             regexp = "^(?=.[A-Z])(?=.[a-z])(?=.\\d)(?=.\\W).*$",
             message = "VALIDATION.CHANGEPASSWORD.CURRENTPASSWORD.WEAK"
     )
-    @Schema(example = "<PASSWORD>")
+    @Schema(example = "Password@123")
     private String currentPassword;
     @NotBlank(message = "VALIDATION.CHANGEPASSWORD.NEWPASSWORD.NOT_BLANK")
     @Size(
@@ -35,7 +35,7 @@ public class ChangePasswordRequest {
             regexp = "^(?=.[A-Z])(?=.[a-z])(?=.\\d)(?=.\\W).*$",
             message = "VALIDATION.CHANGEPASSWORD.NEWPASSWORD.WEAK"
     )
-    @Schema(example = "<PASSWORD>")
+    @Schema(example = "Password@123")
     private String newPassword;
     @NotBlank(message = "VALIDATION.CHANGEPASSWORD.CONFIRMNEWPASSWORD.NOT_BLANK")
     @Size(
@@ -47,6 +47,6 @@ public class ChangePasswordRequest {
             regexp = "^(?=.[A-Z])(?=.[a-z])(?=.\\d)(?=.\\W).*$",
             message = "VALIDATION.CHANGEPASSWORD.CONFIRMNEWPASSWORD.WEAK"
     )
-    @Schema(example = "<PASSWORD>")
+    @Schema(example = "Password@123")
     private String confirmNewPassword;
 }

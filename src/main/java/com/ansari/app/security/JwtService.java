@@ -28,8 +28,8 @@ public class JwtService {
     private long refreshTokenExpiration;
 
     public JwtService() throws Exception {
-        this.privateKey = KeyUtils.loadPrivateKey("key/local-only/private_key.pem");
-        this.publicKey = KeyUtils.loadPublicKey("key/local-only/public_key.pem");
+        this.privateKey = KeyUtils.loadPrivateKey("keys/local-only/private_key.pem");
+        this.publicKey = KeyUtils.loadPublicKey("keys/local-only/public_key.pem");
     }
 
 

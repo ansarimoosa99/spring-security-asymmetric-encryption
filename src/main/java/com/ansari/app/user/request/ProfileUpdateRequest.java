@@ -15,9 +15,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class ProfileUpdateRequest {
-    @NotBlank(message = "VALIDATION.PROFILEUPDATE.FIRSTNAME.NOT_BLANK")
     @Size(
-            min = 5,
+            min = 1,
             max = 50,
             message = "VALIDATION.PROFILEUPDATE.FIRSTNAME.SIZE"
     )
@@ -27,9 +26,9 @@ public class ProfileUpdateRequest {
     )
     @Schema(example = "Moosa")
     private String firstName;
-    @NotBlank(message = "VALIDATION.PROFILEUPDATE.LASTNAME.NOT_BLANK")
+
     @Size(
-            min = 5,
+            min = 1,
             max = 50,
             message = "VALIDATION.PROFILEUPDATE.LASTNAME.SIZE"
     )
@@ -39,12 +38,13 @@ public class ProfileUpdateRequest {
     )
     @Schema(example = "Ansari")
     private String lastName;
-    @NotBlank(message = "VALIDATION.PROFILEUPDATE.DATEOFBIRTH.NOT_BLANK")
-    @Schema(example = "01-01-2000")
-    @Pattern(
-            regexp = "^\\d{2}-\\d{2}-\\d{4}$",
-            message = "VALIDATION.PROFILEUPDATE.DATEOFBIRTH.PATTERN"
-    )
+
+
+//    @Pattern(
+//            regexp = "^\\d{4}-\\d{2}-\\d{4}$",
+//            message = "VALIDATION.PROFILEUPDATE.DATEOFBIRTH.PATTERN"
+//    )
+    @Schema(example = "2000-01-24")
     private LocalDate dateOfBirth;
 
 }

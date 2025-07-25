@@ -70,7 +70,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         checkUserPhoneNumber(request.getPhoneNumber());
         checkPassword(request.getPassword(), request.getConfirmPassword());
 
-        //fetch the user role from the database
+        //fetch the user role from the database // to be handles later on the fly, but quick fix added in Application.java
         final Role userRole = this.roleRepository.findByName("ROLE_USER")
                 .orElseThrow(() -> new EntityNotFoundException("Role user does not exist"));
 
@@ -125,7 +125,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     private void checkPassword(final String password, final String confirmPassword) {
-        if (password != null && password.equals(confirmPassword)) {
+        if (password != null && !password.equals(confirmPassword)) {
             throw new BusinessException(ErrorCode.PASSWORD_MISMATCH);
         }
 
